@@ -145,17 +145,25 @@ const showPosts = (posts) => {
 const displayLikedPosts = () => {
   document.getElementById("answer-section").style.display = 'none';
   document.getElementById( "liked" ).innerHTML = ''
-    const likedPosts = getLikedPosts();
+  const headerDiv = document.createElement('div');
+  headerDiv.className = 'mb-4';
+  headerDiv.innerHTML = `<h1>Liked posts</h1>`;
+  document.getElementById( "liked" ).appendChild(headerDiv);
+  const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
-        const div = createPost(post);
-        document.getElementById( "liked" ).appendChild(div);
+      const div = createPost(post);
+      document.getElementById( "liked" ).appendChild(div);
     });
 };
 
 const displayReportedPosts = () => {
   document.getElementById("answer-section").style.display = 'none';
   document.getElementById( "reported" ).innerHTML = '';
-    const reportedPosts = getReportedPosts();
+  const headerDiv = document.createElement('div');
+  headerDiv.className = 'mb-4';
+  headerDiv.innerHTML = `<h1>Reported posts</h1>`;
+  document.getElementById( "reported" ).appendChild(headerDiv);
+  const reportedPosts = getReportedPosts();
     reportedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
