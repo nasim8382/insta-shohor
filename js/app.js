@@ -51,7 +51,6 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-    // const image = post.image;
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
@@ -144,11 +143,7 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   document.getElementById("answer-section").style.display = 'none';
-  document.getElementById( "liked" ).innerHTML = ''
-  const headerDiv = document.createElement('div');
-  headerDiv.className = 'mb-4';
-  headerDiv.innerHTML = `<h1>Liked posts</h1>`;
-  document.getElementById( "liked" ).appendChild(headerDiv);
+  document.getElementById( "liked" ).innerHTML = `<h1>Liked posts</h1>`;
   const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
       const div = createPost(post);
@@ -158,11 +153,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   document.getElementById("answer-section").style.display = 'none';
-  document.getElementById( "reported" ).innerHTML = '';
-  const headerDiv = document.createElement('div');
-  headerDiv.className = 'mb-4';
-  headerDiv.innerHTML = `<h1>Reported posts</h1>`;
-  document.getElementById( "reported" ).appendChild(headerDiv);
+  document.getElementById( "reported" ).innerHTML = '<h1>Reported posts</h1>';
   const reportedPosts = getReportedPosts();
     reportedPosts.forEach((post) => {
         const div = createPost(post);
